@@ -2,7 +2,7 @@
 #SBATCH --job-name=infoscore         # Job name
 #SBATCH --partition=highmem_p             # Partition (queue) name
 #SBATCH --ntasks=1                    # Run on a single CPU
-#SBATCH --mem=300gb                     # Job memory request
+#SBATCH --mem=500gb                     # Job memory request
 #SBATCH --time=167:00:00               # Time limit hrs:min:sec
 #SBATCH --output=infoscore.%j.out    # Standard output log
 #SBATCH --error=infoscore.%j.err     # Standard error log
@@ -50,7 +50,7 @@ if [ $step2 = true ]; then
 ###-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 #Set in/out directories
-genoindir=("/scratch/mf91122/Fall2021practice/UKBpgen")
+genodir=("/scratch/mf91122/Fall2021practice/UKBpgen")
 infodir=("/scratch/mf91122/Fall2021practice/UKBpgen/mfi/info0.5")
 outdir=("/scratch/mf91122/Fall2021practice/genotypeQC")
 
@@ -61,6 +61,7 @@ mkdir -p $outdir
 plink2 \
 --pfile $genodir/chr"$i" \
 --extract $infodir/ukb_mfi_chr"$i"_v3_0.5.txt \
+--make-pgen \
 --out $outdir/chr"$i"
 
 fi #close if
