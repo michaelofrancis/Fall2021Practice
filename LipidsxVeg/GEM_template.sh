@@ -23,7 +23,7 @@ outdir=("/scratch/mf91122/TxSmoking/GEM")
 
 phenotypes=("LDL" "HDL" "Tot_Chol")
 
-exposures=("Consistent_Self_Reported_Vegetarian_across_all_24hr", "Self_Reported_Vegetarian_plus_strict_initial_and24")
+exposures=("Consistent_Self_Reported_Vegetarian_across_all_24hr" "Self_Reported_Vegetarian_plus_strict_initial_and24")
 
 
 for j in ${phenotypes[@]} 
